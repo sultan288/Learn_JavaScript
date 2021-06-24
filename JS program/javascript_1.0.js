@@ -971,3 +971,165 @@
 // how to print the value of an object
 // adding a constructor function
 // adding a function inside a constructor
+
+//## Math Object
+//==========================================================================
+
+// var num1 = Number(prompt("Enter f n: "));
+// var num2 = Number(prompt("Enter s n: "));
+//@@MAXIMUM
+// var maximum = Math.max(num1,num2);
+// document.write(maximum);
+// //
+// var num1 = parseInt(prompt("Enter f n: "));
+// var num2 = parseInt(prompt("Enter s n: "));
+//@@MINIMUM
+// var maximum = Math.max(num1,num2);
+// document.write(maximum);
+//
+// var minimun = Math.min(num1,num2);
+// document.write(minimun);
+//---------------------------------------------------------------------
+//@@SQRT
+
+// var num = Number(prompt("Enter a number: "));
+// var num2 = Number(prompt("Enter a number2: "));
+//
+// var power = Math.pow(num, num2);       //2pow4 =16
+// document.write(power+" pow <br/>");
+//--------------------------------------------------------
+// var num = Number(prompt("Enter a number: "));
+//
+// var squareRoot = Math.sqrt(num);    //25=5
+// document.write(squareRoot+" sqrt <br/>");
+//
+// var absolute = Math.abs(num);       //-5=5 ; take the absolute value
+// document.write(absolute+" abs <br/>");
+//
+// var sinValue = Math.sin(num);        //2= 0.90929...........
+// document.write(sinValue +" sin <br/>");
+//
+// var floor = Math.floor(num);            //2.4 = 2, 2.8 =4; take the lower integer
+// document.write(floor+" floor <br/>");
+//
+// var ceil = Math.ceil(num);              // 2.1= 3; 2.8 = 3; take the higher integer
+// document.write(ceil+" ceil <br/>");
+//
+// var round = Math.round(num);            // 3.4 = 3; 3.5= 4; 3.8= 4;  take the round integer
+// document.write(round+" round <br/>");
+//
+// var random = Math.random(num);          //take random number from 0-1, but not 1, less than 1;
+// document.write(random+" random <br/>");
+//-----------------------------------------------------------------
+
+//## More random method usage
+//>> random number Math.random() * 6 always generate 0 to max 5;
+// var random = (Math.floor(Math.random() * 6 ));               //for random value from 0-5;
+// document.write("random 1-5: " +random +"<br/>");
+//
+// var random2  = Math.floor(Math.random()*11 + 10);      //for random value from 10-20, so Math.random()*11= 0 to 10; +10 =max 20
+// document.write("random 10-20: " +random2 +"<br/>");
+//---------------------------------------------------------------------------
+
+//## Making a Guess game using random method
+//==================================================================
+//Guessing game
+//Guess a number from 1 to 5
+//Generate a random number between 1 to 5
+//If the guess number matches random number, then show message won else lost
+//Run the game for 5 times
+//show the number of wons and losts
+
+// var numOfWon = 0;
+// var numOfLost = 0;
+//
+// for(var i=1; i<=5; i++) {
+//
+//     var guessNum = parseInt(prompt("Enter a number from 1 to 5:  "));
+//
+//     var randomNum = Math.floor(Math.random() * 5);
+//
+//     if (guessNum == randomNum) {
+//         document.write("You have won");
+//         numOfWon++;
+//     } else {
+//         document.write("You have lost");
+//         numOfLost++;                                   document.write("<br/>");
+//     }
+// }
+// document.write("Num of won = "+ numOfWon+ "<br/>");
+// document.write("Num of lost = "+ numOfLost+ "<br/>");
+
+// ## Date Object
+//===================================================================
+
+// var date = new Date();
+// document.write(date);
+//
+// var year = date.getFullYear();
+// document.write(year);              document.write("<br/>")
+
+// var month = date.getMonth();
+// document.write(month);                  document.write("<br/>")
+//
+// var currentDate = date.getDate();
+// document.write(currentDate);            document.write("<br/>")
+//
+// var currentDay = date.getDay();
+// document.write(currentDay);                 document.write("<br/>")
+//
+// var currentMinutes = date.getMinutes();
+// document.write(currentMinutes);           document.write("<br/>")
+
+//## Introduction to DOM- select html elements
+//==================================================================================
+
+//getElementById
+//---------------------------------------------------------------
+
+// var myHeading = document.getElementById("heading1");
+// myHeading.innerHTML = "Hello";
+//
+// document.getElementById("heading2").innerHTML = "GoodBye";
+//
+// var myPara = document.getElementById("para");
+// myPara.innerHTML = "Bye";
+
+//getElementsByTagName
+//------------------------------------------------------------------------
+
+// document.getElementsByTagName("h1")[0].innerHTML = "Replaced by tag name1";    //must include the index number [0] [1]
+// document.getElementsByTagName("h1")[1].innerHTML = "Replaced by tag name2";
+
+//getElementsByClassName
+//--------------------------------------------------------------------------
+
+// document.getElementsByClassName("heading1")[0].innerHTML = "Replace by class name .heading"; //must include the index number [0] [1]
+// document.getElementsByClassName("heading1")[1].innerHTML = "Replace by class name .heading2";
+//
+// document.getElementsByClassName("para1")[0].innerHTML = "Replaced by class name .para";
+
+// querySelector
+//===========================================================================
+
+//document.getElementById("para1").innerHTML = "Hello";    //this is getElementById
+
+// @@ for id must include #id and for class include .class
+// document.querySelector("#para1").innerHTML = "This is query by id";
+// document.querySelector(".para2").innerHTML = "This is query2 by cls";
+
+// TagName replaced by querySelector
+//--------------------------------------
+// document.querySelector("p").innerHTML = " Tag name replaced by queryselector";
+
+// parent and child tag select by querySelector(a)
+//-------------------------------------------------
+
+// document.querySelector("a").innerHTML = "query";    //parent element
+// document.querySelector("li a").innerHTML = "li a query";   //parent and child select by query
+// document.querySelector(".my-div a").innerHTML = "class a"    //class then child tag a
+
+//## query selector all method
+//-------------------------------------------------
+// document.querySelectorAll("p")[0].innerHTML = "This is text 1 by qsAll";
+// document.querySelectorAll("p")[1].innerHTML = "This is text 2 by qsAll";
