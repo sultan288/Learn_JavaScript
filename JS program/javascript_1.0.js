@@ -1129,7 +1129,96 @@
 // document.querySelector("li a").innerHTML = "li a query";   //parent and child select by query
 // document.querySelector(".my-div a").innerHTML = "class a"    //class then child tag a
 
-//## query selector all method
+//## query selectorall method
 //-------------------------------------------------
 // document.querySelectorAll("p")[0].innerHTML = "This is text 1 by qsAll";
 // document.querySelectorAll("p")[1].innerHTML = "This is text 2 by qsAll";
+
+//@ Onclick Event
+//=====================================================================
+
+// function myMessage() {
+//     alert("Button 1");
+// }
+//  function myMessage2() {
+//     alert("Button 2");
+//  }
+//  function myPara() {
+//     alert("paragraph");
+//  }
+ //---------------------------------------------------------
+// Show message in paragraph
+//----------------------------------------------------------
+// function myParagraph() {
+//     var myVarP = document.querySelector("#para");
+//     myVarP.innerHTML = "Clicked button 1";
+// }
+//
+// var myVarP2 = document.querySelector("#para");
+// function myPara2() {
+//     myVarP2.innerHTML = "Clicked button 2";
+// }
+//------------------------------------------------------
+// Click and show image
+//------------------------------------------------------
+// myVar = document.querySelector("#myImgId");
+// function myImg1() {
+//     myVar.src = "images/1.jpg";
+// }
+// function myImg2() {
+//     myVar.src = "images/2.jpg";
+// }
+
+// DOM- document object model with css
+//--------------------------------------------------------------
+// var link = document.getElementsByTagName("a")[0];
+// link.innerHTML = "This is sultan";
+// link.style.textDecoration = "none";
+// link.style.color = "red";
+// link.style.fontSize = "2rem";
+//
+// var head1 = document.getElementsByTagName("h1")[0];
+// head1.innerHTML = "heading 1 changed";
+
+//How to create html element by JavaScript
+//==================================================================
+//Creat html element
+//Inpu text into the element
+
+// var heading3 = document.createElement("h1");
+// var text = document.createTextNode("This is heading 3");
+// heading3.appendChild(text);
+//
+// var myDiv1 = document.getElementById("myDiv");
+// myDiv1.appendChild(heading3);
+
+//How to remove a html element
+//======================================================
+
+// var heading2 = document.getElementsByTagName("h1")[1];
+// var myDiv1 = document.getElementById("myDiv");
+// myDiv1.removeChild(heading2);
+
+//Create a html element on the top
+//--------------------------------------------------------
+
+// var heading0 = document.createElement("h1");
+// var text0 = document.createTextNode("This is heading 0");
+// heading0.appendChild(text0);
+//
+// var myDiv1 = document.getElementById("myDiv");
+// var heading1 = document.getElementsByTagName("h1")[0];       //get the heading1 by tagName
+//
+// myDiv1.insertBefore(heading0, heading1);              // insertBefore(before,after)=(created heading, bottom of the created heading(specific heading position
+//                                                         //this will create element in the bottom->> myDiv1.appendChild(heading0);
+
+//@add or remove or show a class
+//==================================================================
+// var showclass = document.getElementById("myDiv").classList;
+// document.write(showclass+"<br/>");
+//
+// var addclass = document.getElementById("myDiv").classList.add("my-class2");    //add a class
+// document.write(showclass+"<br/>");
+//
+// var remclass = document.getElementById("myDiv").classList.remove("my-class");     //remove a class
+// document.write(showclass);
