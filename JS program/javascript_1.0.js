@@ -1222,3 +1222,98 @@
 //
 // var remclass = document.getElementById("myDiv").classList.remove("my-class");     //remove a class
 // document.write(showclass);
+
+//@ Image slider(next/prev)
+//====================================================================
+// var photos = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg"];
+// var imgTag = document.querySelector("img");
+//
+// count = 0;
+// function next() {
+//     count++;
+//     if(count>=photos.length){
+//         count = 0;
+//         imgTag.src = photos[count];
+//
+//     } else {
+//         imgTag.src = photos[count];
+//     }
+//
+// }
+// function prev() {
+//     count--;
+//     if(count < 0){
+//         count = photos.length - 1;
+//         imgTag.src = photos[count];
+//     } else {
+//         imgTag.src = photos[count];
+//     }
+// }
+
+//@Changing_CSS_style_dynamically(add or remove css class)
+//================================================================
+
+// var myVar = document.querySelector("#paraId");
+// function addStyle() {
+//     myVar.classList.add("para-style");                              //add css class
+//
+//     // myVar.style.color = "red";
+//     // myVar.style.fontSize = "3rem";
+//     // myVar.style.fontWeight = "bold";
+//     // myVar.style.fontStyle = "italic";
+//     // document.querySelector("#paraId").style.color = "red";
+// }
+// function remStyle() {
+//
+//     myVar.classList.remove("para-style");                       //remove css class
+// }
+
+//@Event_Listener
+//============================================================
+
+// document.querySelector("button").addEventListener("click", function(){
+//     alert("Hello");
+// });
+//
+// function myFunction() {
+//     alert("Hello");
+// }
+//-------------------------------------------------------------------------
+// var myVar = document.querySelector("h1");
+// // myVar.addEventListener("click", function () {
+// //     alert("hi");
+//
+// myVar.addEventListener("mouseover", function (){
+//     myVar.classList.add("my-style");
+// });
+// myVar.addEventListener("mouseout", function (){
+//     myVar.classList.remove("my-style");
+// })
+
+//@Event_listener_with_multiple_elements
+//=======================================================================
+// var but1 = document.querySelectorAll(".myButton")[0];
+// but1.addEventListener("click", function () {
+//     var text = this.innerHTML;
+//     document.querySelector("h1").innerHTML = text + " is clicked";
+// });
+// var but2 = document.querySelectorAll(".myButton")[1];
+// but2.addEventListener("click", function (){
+//     var text = this.innerHTML;
+//     document.querySelector("h1").innerHTML = text+ " is clicked";
+// });
+// var but3 = document.querySelectorAll(".myButton")[2];
+// but3.addEventListener("click", function () {
+//     var text = this.innerHTML;
+//     document.querySelector("h1").innerHTML = text+ " is clicked";
+// });
+
+//@Shortcut of the above function(multiple listener with multiple element)
+//---------------------------------------------------------------------------
+// var len = document.querySelectorAll(".myButton").length;
+// for(var i=0; i<len; i++) {
+//     document.querySelectorAll(".myButton")[i].addEventListener("click", function (){
+//         var text = this.innerHTML;
+//         document.querySelector("h1").innerHTML = text+ " is clicked";
+//     });
+// }
