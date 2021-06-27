@@ -1317,3 +1317,262 @@
 //         document.querySelector("h1").innerHTML = text+ " is clicked";
 //     });
 // }
+
+//@Audio play using JS button
+//=================================================================
+
+// for(var i=0; i<3; i++) {
+//     document.querySelectorAll(".myButton")[i].addEventListener("click", function () {
+//         var text = this.innerHTML;
+//         console.log(text);
+//         audioPlay(text);
+//         playAnimation(text);
+//
+//     });
+// }
+// //This program has a problem that is the music is playing all at a time;
+// function audioPlay(text){
+//     switch (text){
+//         case "a":
+//             var audio = new Audio("files/a.mp3");
+//             audio.play();
+//             break;
+//         case "b":
+//             var audio = new Audio("files/b.mp3");
+//             audio.play();
+//             break;
+//         case "c":
+//             var audio = new Audio("files/c.mp3");
+//             audio.play();
+//             break;
+//     }
+// }
+
+//#Animation adding to javascript
+//----------------------------------------------------------------------
+
+// function playAnimation(text){
+//     var selectedButton = document.querySelector("."+text);
+//     selectedButton.classList.add("anim");
+//
+//     setTimeout(function (){
+//         selectedButton.classList.remove("anim");
+//     }, 1000);
+// }
+
+//#Add listener with keyboard-keypress
+//--------------------------------------------------------------------------
+// document.addEventListener("keypress",function (event){
+//     var text = event.key;
+//     audioPlay(text);
+//     playAnimation(text);
+// })
+
+//#keypress another program
+//--------------------------------------------------
+
+// document.addEventListener("keypress",function (event){
+//     var text = event.key;
+//     document.querySelector("p").innerHTML = "You have pressed " +text;
+// });
+
+//@Count character in textarea
+//--------------------------------------------------------------
+// var count = 0;
+// document.querySelector("textarea").addEventListener("keypress", function (event){
+//     count++;
+//     var text = event.key;
+//     document.querySelector("p").innerHTML = ("You have pressed "+ count);
+//
+// });
+
+//#Error_Handling
+//================================================================
+//Error may cause
+//Fault in program
+//Error input of user
+//Server response problem or slow
+//--------------------------------------------------------------
+//Error handling-> try, catch, finally, throw
+//try...catch handle run time errors(program which is
+//Error object
+//The finally statement ->execute code, after try and catch
+
+//sample error
+// alert("Hi Everyone");
+// alert(x);
+// alert("Hi");
+
+// try{
+//     //code test
+//    alert("Hi everyone");
+//    alert(x);
+// }catch(err){
+//     //handle error
+//     // alert("Inside catch block");
+//     // console.log("Inside catch block");
+//         console.log(err);
+//     // console.log(err.name);
+//     // console.log(err.message);
+//     // document.write(err);
+//
+// }finally {
+//     alert("Bye everyone");
+// }
+
+//#Error_handling_throw_keyword(using to create custom error)
+//==================================================
+
+// document.querySelector("#checkButton").addEventListener("click",function (){
+//     var num = document.querySelector("#textField").value;
+//     document.getElementById("para").innerHTML = num;
+//
+//     try{
+//         if(num<5)
+//         {
+//             throw "input is less than 5"
+//         }else if(num>10)
+//         {
+//             throw "input is greater than 10"
+//         }
+//
+//     }catch (err){
+//         console.log(err);
+//     }
+// });
+
+//@Canvas(bd flag)
+//=============================================================
+
+// var c = document.getElementById("myCanvas");
+//
+// var ctx = c.getContext("2d");
+//
+// ctx.fillRect(10,10, 220,250);
+// ctx.fillStyle = "red";
+// ctx.backgroundColor = "green";
+// ctx.color = "green";
+//
+// ctx.strokeRect(10,10,220,250);    //for border
+// ctx.strokeStyle = "black";
+// ctx.lineWidth = 3;
+//
+// var centerX = c.width / 2;     //for center x
+// var centerY = c.height /2;      //for center y
+//
+// ctx.beginPath();                    //for circle starting point
+// ctx.arc(centerX, centerY, 50,0, 2*Math.PI,false);         //for circle drawing
+// ctx.fillStyle = "red";
+// ctx.fill();
+// ctx.stroke();
+
+//@ES6-ECMAScript6
+//===============================================
+//in ES5-variable declaration
+
+// var x = 6;
+// if(true){
+//     var x = 5;
+// }
+// console.log(x);      //this will print x=5;
+
+//But in ES6 variable will declare in -> let
+
+// let x = 6;
+// if(true) {
+//     let x = 5;
+// }
+// console.log(x);        // Now the value of x is 6; Because in ES6  x variable will work under block;
+
+//@let in loop
+//------------------------------------------------------
+// let x = 15;
+// for(let x=1; x<=10; x++){
+//     console.log(x);
+// }
+// console.log(x);
+
+//@const in es6; const value is always fixed
+//--------------------------------------------------------
+// const x = 11;
+// if(true) {
+//     x = 10;
+//     console.log(x);            //error! because the value will never changed
+// }
+
+//@string_concatenation
+//------------------------------------------------
+// var x = 25;
+// var y = 30;
+// var sum = x + y;
+// console.log("sum is " + sum + " the end");
+
+// In ES6 string concatenation
+//------------------------------------------------
+// let x = 25;
+// let y = 30;
+//
+// let sum = x + y;
+// console.log(`sum is ${sum} the end`);
+
+//Another example
+//------------------------------------------------
+// let name = "Tipu SUltan";
+//
+// let message = `I am ${name}. I am learning JavaScript`;
+// console.log(message);
+
+//@Function in ES6
+//===============================================
+// function add(x,y){
+//     var sum = x + y;
+//     console.log(sum);
+// }
+// add(20,30);
+//----------------------------------------------
+//Now in ES6
+//-------------------------------------------------
+// const add = (x,y) => {
+//     let sum = x + y;
+//     console.log(sum);
+// }
+// add(22,30);
+
+//@Hoisting_and_strict_mode
+//@ES6_features
+//1. ES6 Syntax
+//  1.1 ES6 Variables ->var ,let, const (scope, redeclaration, value assigning)
+//  1.2 Template literals
+//  1.3 Hoisting and strict mode
+//  1.4 Default and Rest parameter
+//  1.5 spread operator
+//  1.6 for...of
+//2. Arrow functions
+//3. Destructuring
+//    3.1 Array and object Destructuring
+//------------------------------------------------------------
+//@Hoisting and strict mode(use a variable before declaration, it is possible in JS but only for var, not let in es6
+
+// x = 20;
+// console.log(x);
+// var x;                          //if we use let or const this will not work
+
+//Template literal(for var keyword, if you declare last this will pass the scope in top: like the below program
+// x = 20;
+// if(true) {
+//     y = 10;
+//     console.log(`y = ${y}`);
+//     var y;
+// }
+// console.log(`x = ${x}`)
+// var x;     //use terminal for output
+//------------------------------------------------------------------------------
+//in js it is possible to show value in o/p but in terminal/node.js
+// x=20;
+// console.log(`x = ${x}`)
+//--------------------------------------------------------------------
+//But using "strict mode", the JS code will be more secure and clean for this use "use strict" top of the program
+//=================================================================================
+// "use strict"
+// x = 20;
+// console.log(`x = ${x}`)
