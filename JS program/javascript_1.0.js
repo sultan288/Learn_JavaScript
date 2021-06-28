@@ -1542,7 +1542,7 @@
 //@ES6_features
 //1. ES6 Syntax
 //  1.1 ES6 Variables ->var ,let, const (scope, redeclaration, value assigning)
-//  1.2 Template literals
+//  1.2 Template literals(loop)
 //  1.3 Hoisting and strict mode
 //  1.4 Default and Rest parameter
 //  1.5 spread operator
@@ -1576,3 +1576,395 @@
 // "use strict"
 // x = 20;
 // console.log(`x = ${x}`)
+
+//@default_and_rest_parameter
+//==============================================================================
+//"use strict"
+//@default_parameter
+//============================================================================
+// function message(text = "Hello this is default parameter"){
+//     console.log(`${text}`)
+// }
+// message();                           //in this sphere the default parameter will print
+// message("i love bd");           //but in this sphere the given message will print
+//------------------------------------------------------------------------
+//@rest_parameter
+//====================================================================
+// "use strict"
+
+// function sum(x,y,...z) {                     //in this sphere x = first value, y = second value, and the next all input will show as z value;
+//     console.log(`x = ${x},y = ${y},z = ${z}`)
+// }
+// sum(10,20,30,40,50);            //o/p will, x = 10, y = 20, z = 30,40,50
+
+//@Spread_operator
+//========================================================================
+//sample method
+// function addNumbers(x,y,z){
+//     return x+y+z;
+// }
+// let numbers = [1,2,3]
+// console.log(addNumbers(numbers[0], numbers[1], numbers[2]))
+
+//using spread operator the above program will
+//-----------------------------------------------------------------------
+// function addNumbers(x,y,z) {
+//     return x + y + z;
+// }
+// let numbers = [1,2,3]
+// console.log(addNumbers(...numbers))                //using spread operator
+//-------------------------------------------------------------------------------
+//sent the numbers array to the newNum array
+// function addNumbers(x,y,z) {
+//     return x + y + z;
+// }
+// let numbers = [1,2,3]
+// console.log(addNumbers(...numbers))
+//
+// let newNum = [5,6,...numbers];                    //I want to add the numbers array with this array
+// console.log(newNum);
+//spread operator can use first position, middle position and last position but rest parameter can use only last position
+//spread operator unpack the element but rest parameter pack the element as a array
+//----------------------------------------------------------------------------------------------------------------
+// How to concatenate two array using spread operator
+//sample method
+// let numbers1 = [1,2,3]
+// let numbers2 = [4,5,6]
+// let numbers = numbers1.concat(numbers2)
+// console.log(numbers);
+
+//concat using spread operator
+//-----------------------------------------------------------------------------
+// let numbers1 = [1,2,3]
+// let numbers2 = [4,5,6]
+// let numbers = [...numbers1,...numbers2];
+// console.log(numbers);
+//----------------------------------------------------------------------------------
+
+//@concat two object using spread operator
+//===================================================================
+// let p1 = {
+//     name: "Tipu Sultan",
+//     age: 30,
+// }
+// let p2 = {
+//     nationality: 'Bangladesh',
+//     occupation: 'teacher',
+// }
+// let p = {...p1,...p2};
+// console.log(p);
+
+//@object literals
+//======================================================================
+//short hand method of object property initializer
+
+// function studentInfo1 (name, age){
+//     return{
+//         name: name,         //in ES6 this duplication(name: name;) will eliminate
+//         age: age,
+//     }
+// }
+// console.log(studentInfo1("TIpu", 29));
+
+//In ES6 the above program will
+//-----------------------------------------------------------
+// function studentInfo1 (name, age){
+//     return{
+//         name,        //in ES6 this duplication(name: name;) will eliminate
+//         age
+//      }
+//  }
+// console.log(studentInfo1("TIpu", 29));
+
+//@concise_method-syntax
+//================================================================================
+//function declaration in object(sample method)
+// let message = {
+//     body: function (){
+//         return`Hi, I am object function`
+//     }
+// }
+// console.log(message.body())
+
+//But in concise method the above program will be
+//---------------------------------------------------------------
+// let message = {
+//     body(){                                         //in ES6 the colon and function keyword will remove
+//         return`Hi, I am object function with concise method`
+//     }
+// }
+// console.log(message.body())
+
+//In ES6 space in function allowed but within single quotation
+// let message = {
+//     'body name'(){                                         //in ES6 the colon and function keyword will remove
+//         return`Hi, I am object function with space`
+//     }
+// }
+// console.log(message['body name']())
+
+//@for...of and for...in
+//===================================================================
+//for...of
+//----------------------------------------------------------
+// const names = ["s1", "s2", "s3"]
+// for(let name of names){
+//     console.log(name)
+// }
+//for..in
+//--------------------------------------------------------------
+// let students = {
+//     ID: 101,
+//     name : "Tipu Sultan",
+//     cgpa: 3.22
+// }
+// for(let x in students){
+//     console.log(students[x])            //for key console.log(x)/ for value console.log(students[x])
+// }
+
+//for print x value
+// for(let x in students){
+//     console.log(`${x} : ${students[x]}`)        // x = id,name,cgpa; students[x]= value of id, name, cgpa
+// }
+
+//@for vs foreach
+//======================================================
+//for==>
+// var numbers = [10,20,30,40];
+//
+// for(var x=0; x<numbers.length; x++){
+//     console.log(numbers[x]);
+// }
+
+//foreach==>it holds nested function, it can holds anonymous function
+//---------------------------------------------------------
+// var numbers = [10,20,30,40,50];
+// numbers.forEach(myFunction)                     //forEach take the numbers array element one by one and pass to the myFunction
+//
+// function myFunction(x)
+// {
+//      console.log(x)
+// }
+//alternative==> anonymous function
+// numbers.forEach(function (x){
+//     console.log(x)
+// })
+
+//forEach function has no need for initialization,condition,increment
+
+//Square of a numbers==>
+
+// var numbers = [10,20,30,40];
+// var squareNumbers = [];
+// numbers.forEach(function (x){               // x is a parameter
+//     squareNumbers.push(x*x);
+// })
+// console.log(squareNumbers)
+
+//Another program==>numbers array element will add 5 in every time
+// var numbers = [10.,20,30,40];
+// console.log(numbers)
+// numbers.forEach(function (x, index, arr){              //x = index number, index= main array, arr= full array
+//     arr[index] = x + 5;                                                        //x = item access, index = index number access, arr = full array
+// })
+// console.log(numbers)
+
+//@map_filter_function
+//=======================================================================
+
+//forEach==>
+// var numbers = [2,3,4,5];
+// var squareNumbers = []
+//
+// numbers.forEach(function (x){
+//     squareNumbers.push(x*x);                  //x*x ke push korci squareNumbers
+// })
+
+//@map==>no need to push value in array
+//-------------------------------------------------------------------------
+// var numbers = [2,3,4,5]
+// var squareNumbers = numbers.map(function (x){
+//     return x*x;                          //this will return array value in squareNumbers
+// })
+// console.log(squareNumbers);
+
+//@filter_function==>it will filter specific (condition) value from array
+//----------------------------------------------------------------------------------------
+
+// var numbers = [22,31,3,5,35,26,78];
+// var selectedNumbers = numbers.filter(function (x){
+//     return x>10;
+// })
+// console.log(selectedNumbers);
+
+//@Arrow_function
+//=======================================================================
+//traditional function==>>
+// function display1(){
+//     console.log("I am display 1")
+// }
+
+//Arrow function==>>
+// const display2 = () => {            //()= parameter pass
+//     console.log("I am display 2")
+// }
+// display1();
+// display2();
+
+//Arrow function need not use curly for one statement
+// const display3 = () => console.log("I am display 3 without curly");
+//
+// display3();
+
+//traditional function return method==>
+// function message1(){
+//     return "I am message 1";
+// }
+// console.log(message1());
+//---------------------------------------------------------------------
+//Arrow function return method==>
+// const message2 = () => "I am message 2";          //in arrow function no need to write return and curly{}; but value will return;
+//
+// console.log(message2());
+
+//@parameter pass in arrow function
+//----------------------------------------------------------------------------
+//traditional function
+// function add(num1,num2){
+//     return num1 + num2;
+// }
+// console.log(add(10,20));
+
+//arrow function-
+// const add2 = (num1,num2) => {       //this method {} and return is must
+//    return num1 +num2;
+// }
+//OR alternative
+// const add2 = (num1,num2) => num1 +num2;  //this method {} and return word is removed
+//
+// console.log(add2(10,20));
+//----------------------------------------------------------------------
+//Arrow function(map,filter) in Object selection
+//===========================================================================================
+// var students = [
+//     {
+//         id: 101,
+//         name: 'Tipu',
+//         gpa: 2.65
+//     },
+//     {
+//         id: 102,
+//         name: 'Tanvir',
+//         gpa: 4.56
+//     },
+//     {
+//         id: 103,
+//         name: 'Bijoy',
+//         gpa: 3.65
+//     }
+// ]
+// console.log(students);
+
+//find students who's gpa is greater than 3.00
+//traditional function
+//-----------------------------------------------------------------------------------
+// function studentNames () {
+//     return students.filter(function (x){
+//        return x.gpa > 3
+//     }).map(function (y){
+//         return y.name;
+//     })
+// }
+// console.log(studentNames());
+
+//Now do the above program using Arrow function
+//---------------------------------------------------------------------
+// const studentNames2 = () => students.filter((x) => x.gpa > 3).map((y) => y.name);
+//
+// console.log(studentNames2())
+
+//Destructuring array and objects
+//=============================================================================
+//Array Destructure
+// let numbers = [10,20,30,40,50];
+// let [num1, num2, num3, num4, num5] = numbers        //numbers array value will assign value in the array
+// // console.log(numbers[0]);
+// // console.log(numbers[1]);
+// console.log(num1)
+// console.log(num2)
+
+//Now using spread operator
+// let numbers = [10,20,30,40,50];
+// let [num1, num2,...z] = numbers
+// console.log(z);
+//--------------------------------------------------------
+//Swap variables using destructure method==>>
+// let a = 10, b = 20;
+// [a,b] = [b,a]
+// console.log(a);
+// console.log(b);
+
+//object destructure
+//=====================================================================
+//simple object define
+// const studentInfo = {
+//     id: 101,
+//     fullName: "Tipu",
+//     gpa: 3.22
+// }
+// console.log(studentInfo.id);
+// console.log(studentInfo.fullName);
+// console.log(studentInfo.gpa);
+
+//object define using object destructure==>>
+// const studentInfo = {
+//     id: 101,
+//     fullName: "Tipu",
+//     gpa: 3.22,
+// }
+// const {id,fullName} = studentInfo;    //studentInfo er data id,fullname e dea hoyece
+//
+// console.log(id);
+// console.log(fullName);
+// console.log(studentInfo.gpa);          //but for gpa we will not destructure
+
+//nested object destructure==>>
+//-----------------------------------------------------------------------------
+// const studentInfo = {
+//     id: 101,
+//     fullName: "Tipu",
+//     gpa: 3.22,
+//     language: {                                     //nested object
+//         native: 'bangla',
+//         bilingual: 'english'
+//     }
+// }
+// const {fullName,language} = studentInfo;    //studentInfo er data id,fullname e dea hoyece
+//
+// console.log(fullName);
+// console.log(language);
+// console.log(language.native);
+// console.log(language.bilingual);
+
+//@Destructuring function parameter
+//-----------------------------------------------------------------------------------------
+//sample method==>
+// const studentInfo = (student) => {
+//     console.log(`${student.id}, ${student.fullName}`)
+// }
+// const student = {        //this object info will pass to the studentInfo function
+//     id: 101,
+//     fullName: "Tipu"
+// }
+// studentInfo(student)
+
+//Using destructure==> When Object destructure use curly{}, but when Array destructure use square[] bracket
+//-----------------------------------------------------------------------------------------------------------------------
+// const studentInfo = ({id,fullName}) => {            //object destructure kora hoyece: id,fullName
+//     console.log(`${id}, ${fullName}`)
+// }
+// const student = {        //this object info will pass to the studentInfo function
+//     id: 101,
+//     fullName: "Tipu"
+// }
+// studentInfo(student)
