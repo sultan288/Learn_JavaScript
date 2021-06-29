@@ -1968,3 +1968,269 @@
 //     fullName: "Tipu"
 // }
 // studentInfo(student)
+
+//@array.find()_and_array.findIndex()
+//===================================================================================
+//find(callback, value) return the value of the first element that pass certain condition
+
+// let numbers = [5,55,14,5,78];
+// let firstEvenNumber = numbers.find(x => x%2==0);
+// console.log(firstEvenNumber);
+
+//DO the same task using function call==>>
+// let numbers = [5,55,16,5,78];
+// const evenNumber = (value, index, array) => {
+//     if(value%2===0)
+//     return value;
+// }
+// let firstEvenNumber = numbers.find(evenNumber);
+// console.log(firstEvenNumber);
+
+//findIndex(callback, value) return the index number of the first element that pass certain condition
+
+// let numbers = [5,55,16,5,78];
+// const evenNumber = (value, index, array) => {     //index, array not needed for this program
+//     if(value%2===0)
+//     return value;
+// }
+// let firstEvenNumber = numbers.find(evenNumber);
+// let firstEvenNUmberIndex = numbers.findIndex(evenNumber);
+// console.log(firstEvenNumber);
+// console.log(firstEvenNUmberIndex);
+
+//find() and findIndex() in object(find element and element value under certain condition)
+//=================================================================================
+// const students = [
+//     {
+//         id: 101,
+//         gpa: 2.5
+//     },
+//     {
+//         id: 102,
+//         gpa: 4.65
+//     },
+//     {
+//         id: 104,
+//         gpa: 5
+//     }
+// ]
+// console.log(students.find(x => x.gpa>4))
+
+ //startsWith(searchString, position) => check a string starts with another string
+//endsWith(searchString, length) => check a string ends with another string
+//includes(searchString, position) => check if a string contains another string
+// all these methods are case sensitive
+
+//@startsWith==>
+
+// const message = "Today is friday";
+// console.log(message.startsWith('Today', 0))   //today not work
+
+//@endsWith==>
+
+// const message = "Today is friday";
+// console.log(message.endsWith('friday'))         //Friday not work
+
+//@includes==>
+
+// const message = "Today is friday";
+// console.log(message.includes('friday'))   //Friday not work
+
+//@ES6 Modules => export and import [first create a js file name:myModula]
+//==============================================================================
+
+// import {setText, text} from './myModule'
+//
+// console.log(text);
+// setText("goodbye from es6")
+// console.log(text)
+
+//@ES6_class
+//============================================================
+
+// class Student {
+//     constructor(id, name){
+//         this.id = id;
+//         this.name = name;
+//     }
+//     set studentName(name){       //set the new name
+//         this.name = "Anis";
+//     }
+//     get studentInfo(){
+//         return this.id + " " + this.name;
+//     }
+//
+// }
+// let s1 = new Student(101, "tipu");
+// console.log(s1)
+// console.log(s1.id)
+// console.log(s1.name)
+//
+// //access the setName
+//
+// s1.studentName = "setname";
+// console.log(s1.name);
+//
+// //access the getName
+// console.log(s1.studentInfo);
+
+//@asynchronous_and_synchronous_programming
+//===================================================================================
+//synchronous_programming==>>1. Until a task completed then another task will start, 2. One behaviour, blocking code behaviour, 3. called, single threaded program
+//this four task will complete one by one or que
+// console.log("taskOne");
+// console.log("taskTwo");
+// console.log("taskThree");
+// console.log("taskFour");
+//----------------------------------------------------------------------
+//asynchronous_programming==>>1. If one task is in error than another task will start automatically i.e; the system won't stop.
+
+// const taskOne = () => {
+//     console.log("Task1");
+
+//after completing callstack task, taskTwo will complete
+// const dataLoading = () => {
+//     console.log("Task2. Data Loading");
+// }
+// const taskTwo = () => {
+//     setTimeout(dataLoading, 1000);
+// }
+// const taskThree = () => {
+//     console.log("Task3");
+// }
+// const taskFour = () => {
+//     console.log("Task4");
+// }
+// taskOne();
+// taskTwo();
+// taskThree();
+// taskFour();
+//------------------------------------------------------------------------
+//asynchronous_programming
+// const taskOne = () => {
+//     console.log("Task1");
+// }
+//
+// const taskTwo = () => {
+//     setTimeout(() => {
+//         console.log("Task2. Data Loading");
+//     }, 1000);
+// }
+//
+// const taskThree = () => {
+//     console.log("Task3");
+// }
+// const taskFour = () => {
+//     console.log("Task4");
+// }
+// taskOne();
+// taskTwo();
+// taskThree();
+// taskFour();
+
+//@callback_and _higher_order_function==>
+//====================================================================
+// function square(x) {
+//     console.log(`square of ${x}: ${x * x}`);
+// }
+// //square(5);
+//
+// //const y = square;             //now y will work as square function
+// //y(6);
+//
+// function higherOrderFunction(num, callback) {     //callback is received square() function as argument, this is called callback function
+//       callback(5)                                              //which function received callback function is called higherOrderFunction.
+// }
+// higherOrderFunction(6, square)                 //square function can use as a parameter
+
+//Application of callback and higher order function in asynchronous
+//=====================================================================
+//asynchronous_programming
+
+// const taskOne = (callback) => {
+//     console.log("Task1");
+//     callback();
+// }
+//
+// const taskTwo = (callback) => {
+//     setTimeout(() => {
+//         console.log("Task2. Data Loading");
+//         callback();
+//     }, 2000);
+// }
+//
+// const taskThree = (callback) => {
+//     console.log("Task3");
+//     callback();
+// }
+// const taskFour = () => {           //last one need not to add callback function
+//     console.log("Task4");
+// }
+//
+//
+// taskOne(function f1(){
+//     taskTwo(function f2(){
+//         taskThree(function f3(){
+//             taskFour();
+//         });
+//     });
+// });
+
+//all event handler is asynchronous programming
+// console.log('hi')
+// document.querySelector("button").addEventListener('click', ()=>{
+//     console.log("button is clicked");
+// })
+// console.log('bi');
+
+//@promise==> asynchronous function
+//==========================================================
+
+console.log("welcome");
+
+//how to create a promise==> pending(not done but promised), resolved(completed so successful), rejected(fail to complete)
+
+const promise1 = new Promise((resolve, reject)=>{
+    let completedPromise = false;
+    if(completedPromise){
+        resolve("completed promise 1");
+    }else{
+        //reject("not completed promise 1")
+        //or reject(new Error("not completed promise 1"));
+    }
+})
+//console.log(promise1);
+promise1.then(res => {
+    console.log(res);
+})
+    .catch(err => {
+        console.log(err);
+    })
+
+console.log("end");
+
+//another program
+const promis2 = new Promise((resolve, reject) => {
+    resolve("completed pr 2");
+})
+promis2.then((res)=> console.log(res));
+
+//call all promise at a time
+//promise.all([promise1, promis2]).then(res) => console.log(res);
+
+//promise resolve Timeout set
+
+const promise1 = new Promise((resolve,reject) => {
+    setTimeout(()=> {
+        resolve("completed promise 1");
+    },2000)
+})
+const promise2 = new Promise((resolve,reject) => {
+    setTimeout(()=> {
+        resolve("completed promise 2");
+    },1000)
+})
+
+//promise 1 resolve after 2sec, promise 2 resolve after 1sec
+
+
