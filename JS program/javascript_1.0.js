@@ -2186,51 +2186,54 @@
 //@promise==> asynchronous function
 //==========================================================
 
-console.log("welcome");
+// console.log("welcome");
 
 //how to create a promise==> pending(not done but promised), resolved(completed so successful), rejected(fail to complete)
 
-const promise1 = new Promise((resolve, reject)=>{
-    let completedPromise = false;
-    if(completedPromise){
-        resolve("completed promise 1");
-    }else{
-        //reject("not completed promise 1")
-        //or reject(new Error("not completed promise 1"));
-    }
-})
-//console.log(promise1);
-promise1.then(res => {
-    console.log(res);
-})
-    .catch(err => {
-        console.log(err);
-    })
+// const promise1 = new Promise((resolve, reject)=>{
+//     let completedPromise = false;
+//     if(completedPromise){
+//         resolve("completed promise 1");
+//     }else{
+//         //reject("not completed promise 1")
+//         //or reject(new Error("not completed promise 1"));
+//     }
+// })
+// //console.log(promise1);
+// promise1.then(res => {
+//     console.log(res);
+// })
+//     .catch(err => {
+//         console.log(err);
+//     })
 
-console.log("end");
+// console.log("end");
 
-//another program
-const promis2 = new Promise((resolve, reject) => {
-    resolve("completed pr 2");
-})
-promis2.then((res)=> console.log(res));
+// //another program
+// const promis2 = new Promise((resolve, reject) => {
+//     resolve("completed pr 2");
+// })
+// promis2.then((res)=> console.log(res));
 
 //call all promise at a time
 //promise.all([promise1, promis2]).then(res) => console.log(res);
 
 //promise resolve Timeout set
 
-const promise1 = new Promise((resolve,reject) => {
-    setTimeout(()=> {
-        resolve("completed promise 1");
-    },2000)
-})
-const promise2 = new Promise((resolve,reject) => {
-    setTimeout(()=> {
-        resolve("completed promise 2");
-    },1000)
-})
+// const promise1 = new Promise((resolve,reject) => {
+//     setTimeout(()=> {
+//         resolve("completed promise 1");
+//     },2000)
+// })
+// const promise2 = new Promise((resolve,reject) => {
+//     setTimeout(()=> {
+//         resolve("completed promise 2");
+//     },1000)
+// })
 
 //promise 1 resolve after 2sec, promise 2 resolve after 1sec
 
 
+console.log(firstInteger + (+secondInteger));
+console.log(firstDecimal + (+secondDecimal));
+console.log(firstString + secondString);
