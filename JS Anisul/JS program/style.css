@@ -1,0 +1,23 @@
+.para-style {
+    color: red;
+    font-size: 3rem;
+    font-weight: bold;
+    font-style: italic;
+}
+.my-style{
+    color: crimson;
+}
+button {
+    height: 40px;
+    width: 60px;
+    color: white;
+    background-color: crimson;
+    border-radius: 15px;
+    border: 2px solid black;
+    font-size: 15px;
+    font-width: bold;
+}
+.anim {
+    box-shadow: 0 15px 18px 0 crimson;
+    opacity: 0.5;
+}
