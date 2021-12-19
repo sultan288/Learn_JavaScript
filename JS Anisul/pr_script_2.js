@@ -20,3 +20,4 @@
 
 // document.write(fullName.charAt(1));
 
+alert("Hello")
