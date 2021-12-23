@@ -15,3 +15,5 @@ JS is an object-based language. Everything is and object in JS.
 3. What is Interpolation?
 ===Template literals provide an easy way to interpolate variables and expressions into strings.
    The method is called string interpolation.
+4. What is object constructor?
+===A function designed to create new objects, is called an object constructor.
